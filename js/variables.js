@@ -22,4 +22,37 @@ let petsNumber = 2;
 
 console.log("esta es la descripcion es: ", nombre,"su edad es:", edad, "su peso es: ", peso, "su estatura es: ", estatura, "su genero es Femenino: ",isFemenine, "esta persona es mamá: ", mother, "también tiene mascotas: ", pets, "y esta es la cantidad de mascotas que tiene: ", petsNumber)
 
+/*Tabla de la verdad
+
+1 = true
+0= false
+
+true && true = true
+
+//if - else - elseIf 
+*/
+
+// Crear 3 variables y evaluar la siguiente expresion: si tiene DNI y es mayor de edad y tiene nacionalidad 
+// imprimir en consola que si puede votar. Si tengo nacionalidad y 
+// soy mayor de edad imprimir "debes ir a la registraduria", en caso contrario, 
+// imprimir en consola "no puedes votar"
+//Tienes DNI?
+//Edad
+// Nacionalidad
+
+const documentDni = true;
+let edadVotante = 18;
+const nacionalidadVotante = true;
+
+if (documentDni && nacionalidadVotante >= 18){
+    console.log("tienes DNI, eres mayor a 18 y tienes nacionalidad asi que PUEDES VOTAR")
+}
+if (documentDni && nacionalidadVotante <= 18){
+    console.log("No eres mayor de edad, NO PUEDES VOTAR")
+}
+if(documentDni && nacionalidadVotante){
+    console.log("No cuentas con DNI por lo tanto, NO PUEDES VOTAR")
+} else{
+    console.log("No cuentas con la documentación suficiente para votar")
+}
 
