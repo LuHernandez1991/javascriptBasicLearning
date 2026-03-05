@@ -16,7 +16,10 @@ let edad = 34;
 let peso = 55;
 let estatura = 1.63;
 const isFemenine = true;
+const mother = true;
+const pets = true;
+let petsNumber = 2;
 
-console.log("esta es la descripcion es: ", nombre,"su edad es:", edad, "su peso es: ", peso, "su estatura es: ", estatura, "su genero es: ",isFemenine)
+console.log("esta es la descripcion es: ", nombre,"su edad es:", edad, "su peso es: ", peso, "su estatura es: ", estatura, "su genero es Femenino: ",isFemenine, "esta persona es mamá: ", mother, "también tiene mascotas: ", pets, "y esta es la cantidad de mascotas que tiene: ", petsNumber)
 
 
