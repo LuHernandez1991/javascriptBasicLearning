@@ -233,7 +233,7 @@ if(hora >= 0 && hora <= 5){
 let usuarioAdmin = false;
 let usuarioModerador = true;
 
-if(usuarioAdmin === true || usuarioModerador === true){
+if(usuarioAdmin || usuarioModerador){
     console.log("Acceso permitido")
 } else {
     console.log("Acceso Denegado")
@@ -242,11 +242,59 @@ if(usuarioAdmin === true || usuarioModerador === true){
 //Exercises fifteen
 //Si el día es sábado o domingo, imprimir "Es fin de semana". Si no, imprimir "Es día de semana".
 
-let esSabado = false;
-let esDomingo = false;
+let esSabado = true;
+let esDomingo = true;
 
-if(esSabado === true || esDomingo === true){
+if(esSabado  || esDomingo ){
     console.log("Es fin de semana")
 } else {
     console.log("Es día de semana")
 }
+
+//Exercise 21
+// Si el usuario es "jerel" Y la contraseña es "1234", imprimir "Sesión iniciada". 
+// Si el usuario es correcto pero la contraseña no, imprimir "Contraseña incorrecta". 
+// Si el usuario tampoco es correcto, imprimir "Usuario no encontrado"
+
+const usuario = "Luisa";
+let password = "Lu2058";
+
+if(usuario === "Luisa" && password === "Lu2057"){
+    console.log("Sesion iniciada")
+} else if(usuario === "Luisa" && password !== "Lu2057"){
+    console.log("Contraseña incorrecta")
+} else {
+    console.log("Usuario no encontrado")
+}
+
+//Exercise 22
+//Si el total de compra es mayor a $50 O si el cliente tiene membresía premium, el envío es gratis. 
+// Si no cumple ninguna de las dos condiciones, imprimir que el envío cuesta $5.
+
+let totalCompra = 50;
+let membresiaPremium = true;
+
+if(totalCompra > 50 || membresiaPremium){
+    console.log("Tienes envío gratis")
+} else {
+    console.log("El costo del envio cuesta $5")
+}
+
+//Exercise 23
+//Para adoptar una mascota, la persona debe tener más de 18 años, NO vivir en apartamento Y tener
+//ingresos mayores a $1000. Si cumple todo, imprimir que puede adoptar. 
+//Si no, que no cumple los requisitos.
+
+let edadAdoptante = 18;
+let viviendaCasa = true;
+let ingresos = 1200;
+
+if(edadAdoptante >= 18 && viviendaCasa && ingresos > 1000){
+    console.log("La persona puede adoptar una mascota")
+}else{
+    console.log("No cumple con los requisitos para adoptar")
+}
+
+//Exercise 24
+//Según la operación indicada ("sumar", "restar", "multiplicar", "dividir"), calcular el resultado 
+// entre dos números e imprimirlo. Si se intenta dividir entre cero, imprimir un mensaje de error.
