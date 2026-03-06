@@ -51,3 +51,202 @@ if (documentDni && nacionalidadVotante && edadVotante >= 18){
     console.log("No cuentas con la documentación suficiente para votar")
 }
 
+
+//Exercise one
+//Si el estudiante tiene 18 años o más, imprimir en consola que puede ir a la universidad. 
+// Si no, imprimir que no puede
+
+let edadEstudiante = 19;
+
+if (edadEstudiante >= 18){
+    console.log("El estudiante es aceptado en la universidad")
+} else{
+    console.log("El estudiante no tiene la mayoría de edad, por lo tanto no es aceptado en la universidad")
+}
+
+//Exercise two
+//Si una persona tiene más de $100, imprimir "Puede comprar". 
+// Si no, imprimir "No tiene suficiente dinero"
+
+let personaDinero = 90;
+
+if(personaDinero >= 100){
+    console.log("Puede comprar")
+}else{
+    console.log("No tiene suficiente dinero")
+}
+
+//Exercise three
+//Si un número es mayor a 0, imprimir "Es positivo". Si no, imprimir "No es positivo".
+
+let numero = 2;
+
+if(numero >= 1){
+    console.log("Es positivo")
+}else{
+    console.log("No es positivo")
+}
+
+//Exercise four
+//Si la contraseña ingresada es exactamente igual a "abc123", imprimir "Acceso concedido". 
+// Si no, imprimir "Acceso denegado"
+
+let contraseña = "abc123";
+
+if(contraseña === "abc123"){
+    console.log("Acceso concedido")
+}else{
+    console.log("Acceso denegado")
+}
+
+//Exercise five
+//Comparar el número 5 con el texto "5" usando == y luego con ===. 
+// Imprimir un mensaje explicando el resultado de cada comparación.
+
+let otroNumero = 5;
+
+if(otroNumero == 5){
+    console.log("La comparacion del valor es correcto")
+}else if(otroNumero === "5"){
+    console.log("La comparación del valor y el tipo del valor es correcto")
+}
+
+//Exercise six
+//Si la temperatura es menor a 15 grados, imprimir "Hace frío, lleva abrigo". 
+// Si no, imprimir "El clima está bien".
+
+let temperatura = 16;
+
+if(temperatura <= 15){
+    console.log("Hace frio, lleva abrigo")
+} else{
+    console.log("El clima esta bien")
+}
+
+//Exercise seven
+//Una variable indica si el usuario está registrado. Si NO está registrado, 
+// imprimir que debe crear una cuenta. Si ya está registrado, darle la bienvenida.
+
+let registro = false;
+
+if(registro === true){
+    console.log("Ya te encuentras registrado, Bienvenido")
+} else if(!registro){
+    console.log("No estas registrado, crea tu cuenta")
+}
+
+//Exercise eight
+//Si una persona NO tiene licencia de conducir, imprimir que no puede manejar. 
+// Si la tiene, imprimir que puede manejar.
+
+let licenciaConduccion = false;
+
+if(!licenciaConduccion){
+    console.log("No puedes conducir")
+} else if (licenciaConduccion === true){
+    console.log("Puedes conducir")
+}
+
+//Exercise nine
+//Si la nota es mayor o igual a 60, imprimir "Aprobado". Si no, imprimir "Reprobado"
+
+let valorNota = 50;
+
+if(valorNota >= 60){
+    console.log("Aprobado")
+} else {
+    console.log("Reprobado")
+}
+
+//Exercise Ten
+//Si las luces del carro están encendidas, imprimir "Apaga las luces". 
+// Si no, imprimir "Las luces están apagadas, todo bien"
+
+let lucesEncendidas = true;
+
+if(lucesEncendidas === true){
+    console.log("Apaga las luces")
+} else {
+    console.log("Las luces están apagadas, todo bien")
+}
+
+//Exercise Eleven
+//Según el color del semáforo ("verde", "amarillo" o "rojo"), imprimir la instrucción que debe seguir el
+//conductor. Si el color no es ninguno de los tres, imprimir que no es un color válido.
+
+let colorRed = true;
+let colorGreen = true;
+let colorYellow = true;
+
+if(colorGreen === true ){
+    console.log("El auto debe estar en movimiento en la via")
+} else if(colorYellow === true){
+    console.log("El carro debe reducir la velocidad y transitar con precaución")
+}else if(colorRed === true){
+    console.log("El carro debe estar detenido")
+} else{
+    console.log("El semaforo esta dañado")
+}
+
+//Exercise twelve
+//Convertir una nota numérica a letra: A (90–100), B (80–89), C (70–79), D (60–69), F (menos de 60). 
+// Imprimir la letra correspondiente.
+
+let nota = 50;
+
+if(nota > 90 && nota < 100){
+    console.log("su nota es A")
+} else if(nota > 80 && nota < 89){
+    console.log("su nota es B")
+} else if(nota > 70 && nota < 79){
+    console.log("su nota es C")
+} else if(nota > 60 && nota < 69){
+    console.log("su nota es D")
+} else if(nota < 60){
+    console.log("su nota es F")
+} else {
+    console.log("NO se registró su calificacion")
+}
+
+//Exercise thirteen
+//Dada una hora en formato de 0 a 23, imprimir si es Madrugada (0–5), Mañana (6–11), Tarde (12–17) 
+// o Noche (18–23).
+
+let hora = 12;
+
+if(hora >= 0 && hora <= 5){
+    console.log("La hora es la madrugada")
+} else if(hora >= 6 && hora <= 11){
+    console.log("La hora es en la mañana")
+} else if(hora >= 12 && hora <= 17){
+    console.log("La hora es en la tarde")
+} else if(hora >= 18 && hora <= 23){
+    console.log("La hora es en la noche")
+} else {
+    console.log("Hora no válida")
+}
+
+//Exercise fourteen
+//Si el usuario es "admin" O si el usuario es "moderador", imprimir "Acceso permitido". 
+// Si no, imprimir "Acceso denegado"
+
+let usuarioAdmin = false;
+let usuarioModerador = true;
+
+if(usuarioAdmin === true || usuarioModerador === true){
+    console.log("Acceso permitido")
+} else {
+    console.log("Acceso Denegado")
+}
+
+//Exercises fifteen
+//Si el día es sábado o domingo, imprimir "Es fin de semana". Si no, imprimir "Es día de semana".
+
+let esSabado = false;
+let esDomingo = false;
+
+if(esSabado === true || esDomingo === true){
+    console.log("Es fin de semana")
+} else {
+    console.log("Es día de semana")
+}
