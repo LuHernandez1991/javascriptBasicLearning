@@ -40,19 +40,17 @@ true && true = true
 //Edad
 // Nacionalidad
 
-const documentDni = true;
-let edadVotante = 18;
+const documentDni = false;
+let edadVotante = 19;
 const nacionalidadVotante = true;
 
-if (documentDni && nacionalidadVotante >= 18){
+if (documentDni && nacionalidadVotante && edadVotante >= 18){
     console.log("tienes DNI, eres mayor a 18 y tienes nacionalidad asi que PUEDES VOTAR")
-}
-if (documentDni && nacionalidadVotante <= 18){
+}else if (documentDni && nacionalidadVotante && edadVotante <= 18){
     console.log("No eres mayor de edad, NO PUEDES VOTAR")
-}
-if(documentDni && nacionalidadVotante){
+}else if(!documentDni){
     console.log("No cuentas con DNI por lo tanto, NO PUEDES VOTAR")
-} else{
+} else {
     console.log("No cuentas con la documentación suficiente para votar")
 }
 
