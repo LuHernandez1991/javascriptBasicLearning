@@ -32,13 +32,10 @@ true && true = true
 //if - else - elseIf 
 */
 
-// Crear 3 variables y evaluar la siguiente expresion: si tiene DNI y es mayor de edad y tiene nacionalidad 
-// imprimir en consola que si puede votar. Si tengo nacionalidad y 
+// Crear 3 variables y evaluar la siguiente expresion: si tiene DNI y es mayor de edad 
+// y tiene nacionalidad imprimir en consola que si puede votar. Si tengo nacionalidad y 
 // soy mayor de edad imprimir "debes ir a la registraduria", en caso contrario, 
 // imprimir en consola "no puedes votar"
-//Tienes DNI?
-//Edad
-// Nacionalidad
 
 const documentDni = false;
 let edadVotante = 19;
