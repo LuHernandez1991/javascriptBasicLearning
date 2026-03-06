@@ -298,3 +298,5 @@ if(edadAdoptante >= 18 && viviendaCasa && ingresos > 1000){
 //Exercise 24
 //Según la operación indicada ("sumar", "restar", "multiplicar", "dividir"), calcular el resultado 
 // entre dos números e imprimirlo. Si se intenta dividir entre cero, imprimir un mensaje de error.
+
+
