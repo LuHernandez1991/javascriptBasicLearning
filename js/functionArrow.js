@@ -22,3 +22,15 @@ const verifyIsMajor =(age)=>{
 
 console.log("resultado desde una function",verifyIsMAjor(19));
 console.log("resultado desde una function con flecha",verifyIsMajor(67));
+
+//Operador ternario
+/*expresion ? console.log("true") : console.log("aqui");
+
+const verifyIsMAjor = (edadU) => {
+    edadU >= 18 ? console.log("Es mayor de edad") : console.log("Es menor de edad")
+    return >= 18 ? "Es mayor de edad" : "Es menor de edad"
+}
+*/
+
+
+
