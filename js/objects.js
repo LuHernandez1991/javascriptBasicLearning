@@ -99,3 +99,92 @@ console.log(aa.length);
 console.log(aa.charAt(0));
 console.log(aa.charAt(12));
 console.log(aa.charAt(aa.length -1));
+
+//eliminar espacios
+
+const arrowDeleteSpace = () => {
+    const palabra = "como estan ustedes"
+    console.log(palabra.trim())
+}
+arrowDeleteSpace();
+
+//Ternario
+const persona = {
+    nombre: "Luisa",
+    edad: 19,
+    tieneDinero: true,
+    dinero : 20000,
+    calcularDinero(){
+        const impuesto = .17;
+        return this.tieneDinero ? this.dinero - (this.dinero * impuesto) :"No tiene dinero";
+    }
+}
+
+persona.edad >= 18 && persona.tieneDinero && persona.calcularDinero() > 30000? console.log("Puede estudiar") : console.log("No puede estudiar");
+
+
+/**
+ * Crear 3 objetos, uno por cada producto tiene:
+ * nombre string
+ * precio number
+ * stock number
+ * categorias string = ropa, tecnologia, hogar,etc....
+ * cada producto debe tener un metodo mostrar, este metodoeste metodo debe usar ternario para mostrar si esta disponible
+ * o sin stock y muestre el nombre siempre en mayuscula
+ */
+
+const licuadora = {
+    nombre: "Licuadora",
+    precio: 100,
+    stock: 10,
+    categoria: "Hogar",
+    mostrar(){
+        console.log(`${this.nombre.toUpperCase()} - ${this.stock > 0 ? "Disponible" : "Sin stock"}`);
+    }
+
+}
+const televisor = {
+    nombre: "TV",
+    precio: 120,
+    stock: 10,
+    categoria: "Tecnologia",
+    mostrar(){
+        console.log(`${this.nombre.toUpperCase()} - ${this.stock > 0 ? "Disponible" : "Sin stock"}`);
+    }
+
+}
+const camisa = {
+    nombre: "Camisa",
+    precio: 150,
+    stock: 10,
+    categoria: "Ropa",
+    mostrar(){
+        console.log(`${this.nombre.toUpperCase()} - ${this.stock > 0 ? "Disponible" : "Sin stock"}`);
+    }
+
+}
+
+/**
+ * Crea un objeto llamado carrito con productoUno (empieza en null y se llena cuando se agregue);
+ * productoDos (empieza en null);
+ * productoTres (empieza en null);
+ * total (empieza en 0);
+ * 
+ * tener un metodo agregarProducto(producto) que reciba un producto
+ * dentro del metodo agregarProducto(producto)
+ * se debe verificar si tiene stock, si lo tiene se agrega a productoUno
+ * sino tiene stock, imprima mensaje que indique que no se puede agregar el producto
+ * 
+ */
+
+const carrito = {
+    productoUno: null,
+    productoDos: null,
+    productoTres: null,
+    total: 0,
+    agregarProducto(producto){
+        const response = producto.stock > 0 ? 'tiene stock' : 'No tiene stock'
+        
+    }
+
+}

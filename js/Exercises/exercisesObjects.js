@@ -123,6 +123,103 @@ console.log(cuentaBancaria.retiroDinero(2000000));
 //que el numero sea positivo antes de operar
 
 
+//Creá un objeto que represente un empleado con nombre, puesto y salario. Agregale un método que use 
+// .toUpperCase() para mostrar el puesto en mayúsculas. Agregale otro método que use if/else para 
+// mostrar si el salario es alto (más de $200.000), medio (entre $100.000 y $200.000) o bajo (menos de $100.000)
+
+const empleado = {
+    nombre: "Sofia",
+    puesto: "Administradora",
+    salario: 50000,
+    nombrePuestoMayus (){
+        const puestoDefecto = empleado.puesto || "empleado general";
+        return `Puesto en mayuscula ${puestoDefecto.toLocaleUpperCase()}`
+    },
+    rangoSalario (){
+        if (empleado.salario > 200000){
+            return "El salario es alto";
+        }else if (empleado.salario >= 100000 && empleado.salario === 200000 ){
+            return "El salario es medio"
+        }
+        return "El salario es bajo"
+    }
+}
+
+console.log(empleado.nombrePuestoMayus());
+console.log(empleado.rangoSalario());
+
+
+//Investigación que es el operador ||?: se llama OR logico, este operador es mas flexible y solo necesita que una de las
+//condiciones se cumpla para que el resultado sea true
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Creá un objeto que represente un formulario de registro con nombre de usuario y contraseña.
+//Agregale un método que use .trim() y .length con if/else para validar que el nombre de usuario
+//tenga entre 4 y 12 caracteres. Agregale otro que valide que la contraseña tenga al menos 8 caracteres.
+
+const paciente = {
+    usuario: "administracion",
+    contrasena: "1",
+    validacionUsuario (){
+        const limpiarUsuario = this.usuario.trim();
+        if(limpiarUsuario.length >= 4 && limpiarUsuario.length <= 12){
+            return "El nombre de usuario cumple"
+        }
+        return "Nombre de usuario no aceptable"
+        
+    },
+    validacionContrasena(){
+        if(this.contrasena.length >= 8 ){
+            return "La contraseña es segura"
+        }
+        return "La contraseña es debil"
+
+    },
+    contrasenaProtegida(){
+        const proteccion = this.contrasena.padStart(20, "0");
+        return `Contraseña protegida: ${proteccion}`
+    }   
+
+}
+
+console.log(paciente.validacionUsuario());
+console.log(paciente.validacionContrasena());
+console.log(paciente.contrasenaProtegida());
+
+// Investigá: ¿Qué hace .padStart()? rellena el inicio de una cadena de texto con otro caracter hasta que esta alcance
+//una longitud específica, por ejemplo, este solo actua si el numero que le das es mayor al actual, recordar que javascript
+//resuelve primero lo del padStart y luego el resto de codigo (para cuando queramos imprimirlo en consola)
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+//Creá un objeto que represente una canción con título, artista y duración en segundos. 
+// Agregale un método que use variables internas para convertir la duración a minutos y segundos y la muestre
+//con template literals. Agregale otro método que use un ternario para mostrar si la canción dura más
+//o menos de 3 minutos (180 segundos).
+
+const cancion = {
+    titulo: "El mundo",
+    artista: "prueba",
+    duracionSec: 190,
+    conversionMin(){
+        const minutos = Math.floor(this.duracionSec / 60);
+        const segundos = this.duracionSec % 60;
+        return `La duracion de la cancion es: ${minutos}: ${segundos}`
+    },
+    duracionCancion(){
+        return this.duracionSec > 180 ? "La cancion dura mas de 3 minutos" : "La cancion no dura mucho"
+    }
+
+}
+
+console.log(cancion.conversionMin());
+console.log(cancion.duracionCancion());
+
+
+
+
+
 
 
 
