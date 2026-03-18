@@ -734,9 +734,210 @@ console.log(vueloDir.zonaHoraria());
 
 //¿Para qué sirve la cláusula else if? sirve para evaluar multiples condiciones en orden
 
+/////////////////////////////////////////////////////////////////////////////////////////////
+//Creá un objeto que represente una receta con nombre, ingredientes como string separado por
+//comas y tiempo de preparación en minutos. Agregale un método que use .split() para mostrar los
+//ingredientes uno por uno. Agregale otro método con if/else para clasificar la receta como rápida
+//(menos de 15 minutos), normal (entre 15 y 45 minutos) o elaborada (más de 45 minutos).
 
+const receta = {
+    nombre: "Torta de la abuela",
+    ingredientes:"harina, huevos, mantequilla, azucar, limon",
+    tiempoPreparacion: 145,
+    mostrarIngredientes(){
+        console.log(this.ingredientes.trim().split(","))
+        return `Ingredientes de forma independiente: ${this.ingredientes})`
+        
+    },
+    tiempoEspera(){
+        if(this.tiempoPreparacion < 15){
+            return `El tiempo de preparacion es rapido para preparar la ${this.nombre}`
+        }else if(this.tiempoPreparacion > 15 && this.tiempoPreparacion < 45){
+            return `El tiempo de preparacion de la ${this.nombre} es normal`
+        }
+        return `El tiempo de preparacion para la ${this.nombre} es muy elaborado`
+    }
+}
 
+console.log(receta.mostrarIngredientes())
+console.log(receta.tiempoEspera())
 
+//trimStart() elimina espacios del inicio de una cadena, mientras que el trimEnd lo hace pero al final de cadena
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Creá un objeto que represente un gimnasio con nombre, precio mensual y si tiene pileta. 
+// Agregale un método que use un ternario para mostrar si incluye pileta en el plan. 
+// Agregale otro método que reciba la cantidad de meses y calcule el costo total mostrándolo con template literals.
+
+const gimnasio = {
+    nombre: "Strong Gym",
+    precioMensual: 70000,
+    pileta: true,
+    tienePileta(){
+        return this.pileta ? "Strong Gym te ofrece plan con pileta": "Strong Gym no incluye pileta en tu plan"
+    },
+    cantidadMeses(){
+        const mesesGym = 12;
+        const costoNumero = Number(this.precioMensual);
+        const costoTotal = mesesGym * costoNumero;
+        return `El costo total por ${mesesGym} meses es: ${costoTotal}`
+
+    }
+}
+
+console.log(gimnasio.tienePileta());
+console.log(gimnasio.cantidadMeses());
+
+//Que hace Number(). El método o función Number() sirve para convertir un valor (que suele ser un texto) en un número 
+// real con el que la computadora pueda hacer cálculos matemáticos.
+
+/////////////////////////////////////////////////////////////////////////
+
+//Creá un objeto que represente un estudiante con nombre, carrera y promedio. Agregale un método
+// use .toLowerCase() para normalizar el nombre de la carrera antes de mostrarlo. Agregale otro
+//método con if/else para mostrar el estado académico: promedio menor a 4 es 'en riesgo
+//académico', entre 4 y 5.9 es 'puede rendir con previa', y 6 o más es 'habilitado para rendir el final'.
+
+const estudiante = {
+    nombre: "Abelardo",
+    carrera: "Medicina",
+    promedio: 4.9,
+    nombreCarrera(){
+        const carreraLower = this.carrera.toLowerCase();
+        return `Este es el nombre de la carrera: ${carreraLower}`
+    },
+    promedioAcademico(){
+        const promedioRedondeado = Math.round(this.promedio);
+        if(promedioRedondeado <= 4){
+            return `En riesgo, actualmente su promedio es ${promedioRedondeado}`
+        }else if(promedioRedondeado > 4 && this.promedio <= 5.9){
+            return `Puede rendir con previa, su promedio es ${promedioRedondeado}`
+        }else if(promedioRedondeado > 6){
+            return `Habilitado para rendir el final, su promedio es ${promedioRedondeado}`
+        }
+        return "Promedio desconocido"
+
+    }
+}
+console.log(estudiante.nombreCarrera());
+console.log(estudiante.promedioAcademico());
+
+// Investigá: ¿Qué hace Math.round()? es una función fundamental que se utiliza para redondear un número al entero más cercano.
+// si la parte es menor a 0.5 redondea hacia abajo, si la parte es 0.5 mayor redondea hacia arriba
+
+//////////////////////////////////////////////////////////////////////////
+
+//Creá un objeto que represente un producto de e-commerce con nombre, precio y categoría.
+//Agregale un método que use .includes() con un ternario para mostrar si pertenece a la sección de
+//ofertas: la categoría debe contener la palabra 'oferta' para que cuente. Agregale otro método que
+//muestre el nombre del producto con la primera letra en mayúscula usando .slice() y
+//.toUpperCase().
+
+const productoTest = {
+    nombre: "pestañina",
+    precio: 25000,
+    categoria: "Maquilaje",
+    categoryOffer(){
+        return this.categoria.includes("oferta") ? "La categoria tiene oferta" : "La categoria no tiene oferta";
+    },
+    nameProduct(){
+        const letraInicial = this.nombre.charAt(0).toUpperCase();
+        const restName = this.nombre.slice(1);
+        const caractersEspecif = this.categoria.startsWith("M");
+        const incluyeCategory = this.categoria.includes("M");
+        return `${letraInicial}${restName} ${caractersEspecif} ${incluyeCategory}`
+    }
+}
+
+console.log(productoTest.categoryOffer());
+console.log(productoTest.nameProduct());
+
+//Investigá: ¿Qué hace .startsWith()? es un método de los Strings (cadenas de texto) que sirve para verificar 
+// si un texto comienza con una serie de caracteres específicos, el resultado siempre sera un valor booleano
+// Usalo para verificar si la categoría empieza con la letra 'o' y compará
+//ese resultado con el de .includes()
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//Creá un objeto que represente un sistema de turnos con nombre del cliente, servicio y hora. La
+//hora se guarda como número (por ejemplo, 14 para las 14:00). Agregale un método que use .trim()
+//para limpiar el nombre antes de guardarlo. Agregale otro método con if/else para verificar si la hora
+//está dentro del horario de atención de 9 a 18: si está dentro mostrar 'Turno confirmado', si no
+//mostrar 'Fuera de horario de atencion
+
+const turnos = {
+    nombre: "Atlas",
+    servicio: "nocturno",
+    hora: 18,
+    limpiezaNombre(){
+        const nombreLimpio = this.nombre.trim() || "Cliente sin nombre";
+        return nombreLimpio;
+    },
+    verifyHour(){
+        if(this.hora >= 9 && this.hora <= 18){
+            return `Turno confirmado a las: ${this.hora}`
+        }
+        return `Fuera del horario de atencion`
+    }
+
+}
+console.log(turnos.limpiezaNombre());
+console.log(turnos.verifyHour());
+
+/////////////////////////////////////////////////////////////////////////////////
+
+//Creá un objeto que represente un vehículo de delivery con patente, nombre del repartidor y
+//cantidad de entregas del día. Agregale un método que use un ternario para mostrar si puede tomar
+//más pedidos: el límite diario es 20 entregas. Agregale otro método que muestre la patente siempre
+//en mayúsculas y sin espacios usando .toUpperCase() y .replace()
+
+const vehiculoUber = {
+    patente: "NC2026 113091",
+    nombreRepartidor: "Javier",
+    cantidadEntregas: 12,
+    limitePedidos(){
+        const limite = this.cantidadEntregas > 0 && this.cantidadEntregas <=20;
+        return limite ? "Puede tomar mas pedidos" : "Llegaste al límite de pedidos diarios"
+    },
+    patenteMayus(){
+        return `Esta es la patente: ${this.patente.toUpperCase().replace(" ", "-")}`
+    }
+}
+
+console.log(vehiculoUber.limitePedidos());
+console.log(vehiculoUber.patenteMayus());
+
+///////////////////////////////////////////////////////////////////////////////////7
+
+//Creá un objeto que represente un examen con materia, alumno, respuesta correcta y respuesta del
+//alumno. Agregale un método que use .trim() y .toLowerCase() para normalizar ambas respuestas
+//antes de compararlas. Usá if/else para mostrar 'Correcto' o 'Incorrecto' con el nombre del alumno y
+//la materia usando template literals.
+
+const examenFinal = {
+    materia: "Sociales",
+    alumno: "Sofi",
+    respuestaOk: "Pluton",
+    respuestaAlumno: "Jupiter",
+    mostrarRespuesta(){
+        const respuestaUno = this.respuestaOk.trim().toLowerCase();
+        const respuestaA = this.respuestaAlumno.trim().toLowerCase();
+        return `Respuesta correcta: ${respuestaUno}, y respuesta del alumno: ${respuestaA}`;
+
+    },
+    estadoRespuesta(){
+        const requestOk = this.respuestaOk.trim().toLowerCase();
+        const requestAlumno = this.respuestaAlumno.trim().toLowerCase();
+        if(requestOk === requestAlumno ){
+            return `La respuesta del alumno: ${this.alumno} fue correcta`
+        }
+        return `La respuesta del alumno: ${this.alumno} fue incorrecta`
+
+    }
+}
+console.log(examenFinal.mostrarRespuesta());
+console.log(examenFinal.estadoRespuesta());
 
 
 
