@@ -79,4 +79,70 @@ console.log('Abiertos', abiertos)
 console.log('En progreso', enProgreso)
 console.log('Cerrados', cerrados)
 
+//Paso 8: Verificar categorias con .includes()
+
+const categorias = ["auth", "pagos", "productos", "notificaciones"]
+
+const verificarCategoria = (cat) => {
+    if(categorias.includes(cat)){
+        console.log(`✅ La categoría ${cat} esta registrada`);
+    }else {
+        console.log(`❌ La categoría ${cat} No esta registrada`);
+    }
+}
+
+verificarCategoria("pagos");
+verificarCategoria("envios"); 
+verificarCategoria("auth"); 
+verificarCategoria("reportes"); 
+
+// Paso 9: Buscar un ticket con .find()
+
+const buscarTicket = (idBuscado) => {
+    const resultado = tickets.find(ticket => ticket.id === idBuscado)
+    if(resultado != undefined){
+        console.log(`Ticket encontrado: [${resultado.id}] ${resultado.titulo} ${resultado.prioridad} ${resultado.categoria}`)
+    }else {
+        console.log(`❌ No existe ningun ticket con el id ${resultado}`)
+    }
+}
+buscarTicket("TKT-003");
+buscarTicket("TKT-007");
+buscarTicket("TKT-099");
+
+
+let cantidadTicketPrioridadAlta = 0;
+let cantidadTicketAbiertos = 0;
+let cantidadTicketAbiertoYPrioridadAlta = 0;
+
+const reporteFinal = () => {
+    for(const ticket of tickets){
+        if(ticket.prioridad == "alta" && ticket.estado == "abierto"){
+            cantidadTicketAbiertoYPrioridadAlta++;
+        }
+        if(ticket.prioridad == "alta"){
+            cantidadTicketPrioridadAlta++;
+        }
+        if(ticket.estado == "abierto"){
+            cantidadTicketAbiertos++;
+        }
+    }
+    let estadoSistema = "🟢 ESTABLE";
+    if(cantidadTicketAbiertoYPrioridadAlta >= 3 ){
+        estadoSistema = "🔴 CRITICO";
+    }else if(cantidadTicketAbiertoYPrioridadAlta >= 1 && cantidadTicketAbiertoYPrioridadAlta <= 2){
+        estadoSistema = "🟡 ATENCION";
+    }
+
+    console.log("===========================");
+    console.log("    REPORTE DEL SISTEMA    ");
+    console.log("===========================");
+    console.log("Total de tickets:    ",tickets.length);
+    console.log("Prioridad alta:      ",cantidadTicketPrioridadAlta);
+    console.log("Tickets abiertos:    ",cantidadTicketAbiertos);
+    console.log("===========================");
+    console.log("Estado del sistema:        ",estadoSistema);
+}
+
+reporteFinal()
 
