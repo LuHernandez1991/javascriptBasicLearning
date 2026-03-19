@@ -188,3 +188,64 @@ const carrito = {
     }
 
 }
+
+// ============================================
+// 🐛 EJERCICIO: Bug Report
+// ============================================
+// Vas a modelar un bug report como objeto de JavaScript.
+// Usa todo lo que ya sabes: objetos, funciones, arrow functions.
+
+
+// ── PARTE 1 ──────────────────────────────────
+// Crea un objeto llamado bugReport con estas propiedades:
+//   id, titulo, severidad ("alta" / "media" / "baja"), estado, reportadoPor
+
+const bugReport = {
+    id: "QA-2000",
+    titulo: "No funciona el buscador",
+    severidad: "media",
+    estado: "open",
+    reportadoPor: "Luisa",
+    describir(){
+        return `ID: ${this.id}, Severidad: ${this.severidad}, Estado: ${this.estado}, Titulo del bug: ${this.titulo}`
+    },
+    cambiarEstado(nuevoEstado){
+        this.estado = nuevoEstado;
+        return `El estado se ha actualizado a: ${this.estado}`
+    },
+    esUrgente(){
+        if(this.severidad === "alta"){
+            return true
+        }
+        return false
+    },
+
+}
+
+console.log(bugReport.describir());
+console.log(bugReport.cambiarEstado("In progress"));
+console.log(bugReport.esUrgente());
+
+
+
+// ── PARTE 2 ──────────────────────────────────
+// Agrega estas funciones DENTRO del objeto:
+
+// describir()
+//   Muestra en consola el id, severidad, estado y título del bug.
+
+// cambiarEstado(nuevoEstado)
+//   Recibe un nuevo estado y lo actualiza en el objeto.
+//   Luego muestra: "Estado actualizado a: ..."
+
+// esUrgente()
+//   Retorna true si la severidad es "alta", false si no.
+//   💡 ¿Qué operador ya conoces que te puede servir aquí?
+
+
+// ── PARTE 3 ──────────────────────────────────
+// Prueba tu objeto:
+
+// 1. Llama a describir()
+// 2. Cambia el estado a "en progreso" y llama a describir() de nuevo
+// 3. Muestra en consola si el bug es urgente o no

@@ -12,7 +12,7 @@ precioIva(){
 
 console.log(producto.precioIva());
 */
-
+//NUMERO UNO
 //Creá un objeto que represente un usuario con nombre, apellido y email. 
 // Agregale un método que 
 // use template literals para mostrar la presentación completa. Agregale otro método que convierta el email a minúsculas antes de mostrarlo
@@ -38,8 +38,9 @@ console.log(`nombre: ${typeof infoUsuario.nombre} apellido: ${typeof infoUsuario
 //y de que forma hacerlo o tratarlos para no cometer errores en código. como se usa: typeof nombreVariable; o
 // typeof(nombreVariable);
 
-///////////////////////////////////////////////////////////////7
+///////////////////////////////////////////////////////////////
 
+//NUMERO DOS
 //Creá un objeto que represente un producto con nombre, precio y stock. Agregale un método que
 //use un ternario para mostrar si hay stock disponible o no. Agregale otro método que muestre el
 //nombre del producto siempre en mayúsculas.
@@ -66,6 +67,7 @@ console.log(producto.precio.toFixed(2));
 
 ////////////////////////////////////////////////////////////////////////
 
+//NUMERO TRES
 //Creá un objeto que represente un alumno con nombre, apellido y nota. Agregale un método que
 //use if/else para mostrar si aprobó o desaprobó. La nota mínima para aprobar es 6. El mensaje
 //debe incluir el nombre completo armado con template literals.
@@ -90,6 +92,7 @@ console.log(alumno.notaFinal());
 
 //////////////////////////////////////////////////////////////////////////
 
+//NUMERO CUATRO
 //Creá un objeto que represente una cuenta bancaria con titular y saldo. Agregale un método que
 //reciba un monto y lo deposite. Agregale otro método que use if/else para retirar dinero solo si hay
 //saldo suficiente. Todos los mensajes deben usar template literals.
@@ -122,7 +125,9 @@ console.log(cuentaBancaria.retiroDinero(2000000));
 //el numero es positivo lo deja tal cual. Se usa para saber la distancia o magnitud de algo. sirve para validar
 //que el numero sea positivo antes de operar
 
+////////////////////////////////////////////////////////////////
 
+//NUMERO CINCO
 //Creá un objeto que represente un empleado con nombre, puesto y salario. Agregale un método que use 
 // .toUpperCase() para mostrar el puesto en mayúsculas. Agregale otro método que use if/else para 
 // mostrar si el salario es alto (más de $200.000), medio (entre $100.000 y $200.000) o bajo (menos de $100.000)
@@ -154,6 +159,7 @@ console.log(empleado.rangoSalario());
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
+//NUMERO SEIS
 //Creá un objeto que represente un formulario de registro con nombre de usuario y contraseña.
 //Agregale un método que use .trim() y .length con if/else para validar que el nombre de usuario
 //tenga entre 4 y 12 caracteres. Agregale otro que valide que la contraseña tenga al menos 8 caracteres.
@@ -193,6 +199,7 @@ console.log(paciente.contrasenaProtegida());
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
+//NUMERO SIETE
 //Creá un objeto que represente una canción con título, artista y duración en segundos. 
 // Agregale un método que use variables internas para convertir la duración a minutos y segundos y la muestre
 //con template literals. Agregale otro método que use un ternario para mostrar si la canción dura más
@@ -221,6 +228,43 @@ console.log(cancion.duracionCancion());
 
 /////////////////////////////////////////////////////////////////////////////////////////7
 
+//NUMERO OCHO
+
+//Creá un objeto que represente un auto con marca, modelo y kilometraje. Agregale un método que
+//use if/else para mostrar si el auto necesita service urgente (más de 10.000 km), service próximo
+//(entre 7.500 y 10.000 km) o está al día (menos de 7.500 km). Agregale otro método que muestre la
+//descripción completa del auto usando template literals con el modelo siempre en mayúsculas.
+
+const automovil = {
+    marca: "Ford",
+    modelo: "2026",
+    kilometraje: 1800,
+    servicioUrgente(){
+        if(this.kilometraje > 10000){
+            return "Necesita servicio urgente"
+        }else if(this.kilometraje >=7500 && this.kilometraje <= 10000){
+            return "Servicio está próximo"
+        }else if(this.kilometraje <=7500 && this.kilometraje > 40){
+            return "Esta al día"
+        }
+    },
+    infoCompleta (){
+        const proximo= 2500;
+        const kmFaltantes = this.kilometraje < proximo ? proximo - this.kilometraje : proximo - (this.kilometraje % proximo);
+        return `Características del auto: marca ${this.marca}, modelo: ${this.modelo}, kilometraje: ${this.kilometraje}. Le faltan ${kmFaltantes} para su proximo mantenimiento`
+    }
+    
+
+}
+console.log(automovil.servicioUrgente());
+console.log(automovil.infoCompleta());
+
+//Investigacion: Qué es el operador % (módulo)? se usa para obtener el residuo o lo que sobra de una division entre dos 
+//numeros enteros
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+//NUMERO DIEZ
 //Creá un objeto que represente un empleado con nombre y lista de habilidades guardadas como un
 //string separado por comas. Agregale un método que use .split() para mostrar cuántas habilidades
 //tiene. Agregale otro método que use .includes() con if/else para verificar si tiene una habilidad
@@ -248,70 +292,43 @@ console.log(empleadoH.habilidadEspecific("respetuosa"));
 //Split agarra un string grande, y los separa por mini strings contando cada coma separadora por ejemplo y el includes sirve para
 //para identificar si un string tiene o no el valor que se 
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// ============================================
-// 🐛 EJERCICIO: Bug Report
-// ============================================
-// Vas a modelar un bug report como objeto de JavaScript.
-// Usa todo lo que ya sabes: objetos, funciones, arrow functions.
+//NUMERO NUEVE
+//Creá un objeto que represente un mensaje de chat con remitente, texto y leído (booleano).
+//Agregale un método que use un ternario para mostrar el estado del mensaje como 'leído' o 'no
+//leído'. Agregale otro método que use .length con if/else para avisar si el mensaje es demasiado
+//largo (más de 140 caracteres).
 
-
-// ── PARTE 1 ──────────────────────────────────
-// Crea un objeto llamado bugReport con estas propiedades:
-//   id, titulo, severidad ("alta" / "media" / "baja"), estado, reportadoPor
-
-const bugReport = {
-    id: "QA-2000",
-    titulo: "No funciona el buscador",
-    severidad: "media",
-    estado: "open",
-    reportadoPor: "Luisa",
-    describir(){
-        return `ID: ${this.id}, Severidad: ${this.severidad}, Estado: ${this.estado}, Titulo del bug: ${this.titulo}`
+const mensaje = {
+    remitente: "tigo",
+    texto: "Lee el mensaje que hay para ti",
+    leido: false,
+    estadoMensaje(){
+        return this.leido ? "Leido" : "No leido";
     },
-    cambiarEstado(nuevoEstado){
-        this.estado = nuevoEstado;
-        return `El estado se ha actualizado a: ${this.estado}`
-    },
-    esUrgente(){
-        if(this.severidad === "alta"){
-            return true
+    longitMensaje (){
+        if(this.texto.length <= 140){
+            return "El mensaje es aceptable"
         }
-        return false
+        return "El mensaje es demasiado largo"
     },
-
+    inversionEstado (){
+        this.leido = !this.leido;
+        return this.leido ? "No leido" : "Leido";
+    }
 }
 
-console.log(bugReport.describir());
-console.log(bugReport.cambiarEstado("In progress"));
-console.log(bugReport.esUrgente());
+console.log(mensaje.estadoMensaje());
+console.log(mensaje.longitMensaje());
+console.log(mensaje.inversionEstado());
 
+//Investigación: ¿Qué hace el operador ! (negación)? es un operador que se usa para invertir el valor de verdad de una expresion
+//lo verdadero se vuelve falso y lo falso verdadero.
 
+////////////////////////////////////////////////////////////////////////////////////////////////////7
 
-// ── PARTE 2 ──────────────────────────────────
-// Agrega estas funciones DENTRO del objeto:
-
-// describir()
-//   Muestra en consola el id, severidad, estado y título del bug.
-
-// cambiarEstado(nuevoEstado)
-//   Recibe un nuevo estado y lo actualiza en el objeto.
-//   Luego muestra: "Estado actualizado a: ..."
-
-// esUrgente()
-//   Retorna true si la severidad es "alta", false si no.
-//   💡 ¿Qué operador ya conoces que te puede servir aquí?
-
-
-// ── PARTE 3 ──────────────────────────────────
-// Prueba tu objeto:
-
-// 1. Llama a describir()
-// 2. Cambia el estado a "en progreso" y llama a describir() de nuevo
-// 3. Muestra en consola si el bug es urgente o no
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+//NUMERO DOCE
 //Creá un objeto que represente un pasajero con nombre, número de asiento y peso del equipaje en
 //kilos. Agregale un método que use template literals para mostrar los datos del pasajero. 
 // Agregale otro método que use if/else para calcular el cargo extra: el equipaje es gratuito hasta 23 kg, y por
@@ -336,7 +353,6 @@ const pasajero = {
 
 console.log(pasajero.showDatePax());
 console.log(pasajero.calculatePesoEquipaje());
-
 
 
 
@@ -382,73 +398,7 @@ console.log(pasajeroJerel.calculatePesoEquipaje());
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//Creá un objeto que represente un auto con marca, modelo y kilometraje. Agregale un método que
-//use if/else para mostrar si el auto necesita service urgente (más de 10.000 km), service próximo
-//(entre 7.500 y 10.000 km) o está al día (menos de 7.500 km). Agregale otro método que muestre la
-//descripción completa del auto usando template literals con el modelo siempre en mayúsculas.
-
-const automovil = {
-    marca: "Ford",
-    modelo: "2026",
-    kilometraje: 1800,
-    servicioUrgente(){
-        if(this.kilometraje > 10000){
-            return "Necesita servicio urgente"
-        }else if(this.kilometraje >=7500 && this.kilometraje <= 10000){
-            return "Servicio está próximo"
-        }else if(this.kilometraje <=7500 && this.kilometraje > 40){
-            return "Esta al día"
-        }
-    },
-    infoCompleta (){
-        const proximo= 2500;
-        const kmFaltantes = this.kilometraje < proximo ? proximo - this.kilometraje : proximo - (this.kilometraje % proximo);
-        return `Características del auto: marca ${this.marca}, modelo: ${this.modelo}, kilometraje: ${this.kilometraje}. Le faltan ${kmFaltantes} para su proximo mantenimiento`
-    }
-    
-
-}
-console.log(automovil.servicioUrgente());
-console.log(automovil.infoCompleta());
-
-//Investigacion: Qué es el operador % (módulo)? se usa para obtener el residuo o lo que sobra de una division entre dos 
-//numeros enteros
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//Creá un objeto que represente un mensaje de chat con remitente, texto y leído (booleano).
-//Agregale un método que use un ternario para mostrar el estado del mensaje como 'leído' o 'no
-//leído'. Agregale otro método que use .length con if/else para avisar si el mensaje es demasiado
-//largo (más de 140 caracteres).
-
-const mensaje = {
-    remitente: "tigo",
-    texto: "Lee el mensaje que hay para ti",
-    leido: false,
-    estadoMensaje(){
-        return this.leido ? "Leido" : "No leido";
-    },
-    longitMensaje (){
-        if(this.texto.length <= 140){
-            return "El mensaje es aceptable"
-        }
-        return "El mensaje es demasiado largo"
-    },
-    inversionEstado (){
-        this.leido = !this.leido;
-        return this.leido ? "No leido" : "Leido";
-    }
-}
-
-console.log(mensaje.estadoMensaje());
-console.log(mensaje.longitMensaje());
-console.log(mensaje.inversionEstado());
-
-//Investigación: ¿Qué hace el operador ! (negación)? es un operador que se usa para invertir el valor de verdad de una expresion
-//lo verdadero se vuelve falso y lo falso verdadero.
-
-////////////////////////////////////////////////////////////////////////////////////////////////////7
-
+//NUMERO ONCE
 //Creá un objeto que represente una tienda con nombre, dirección y si está abierta. 
 // Agregale un método que use .toUpperCase() para mostrar el nombre de la tienda. Agregale otro método que 
 // use un ternario para mostrar si la tienda está abierta o cerrada.
@@ -477,6 +427,7 @@ console.log(tienda.nombreTiendaChaining());
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
+//NUMERO TRECE
 //Creá un objeto que represente un libro con título, autor y cantidad de páginas. Agregale un método
 //que use .slice() para mostrar solo los primeros 10 caracteres del título seguidos de '...' si el título es
 //más largo. Agregale otro método con if/else para clasificarlo como lectura corta (menos de 150
@@ -517,6 +468,7 @@ console.log(libro.primeraLetra());
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 
+//NUMERO CATORCE
 //Creá un objeto que represente un jugador con nombre, nivel y puntos. Agregale un método que
 //reciba puntos ganados y los sume. Usá variables internas y if/else para verificar si los puntos
 //alcanzan para subir de nivel: se necesitan 1.000 puntos por nivel. Si se sube de nivel, los puntos
@@ -553,6 +505,7 @@ console.log(jugador.nivelPuntos())
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
+//NUMERO QUINCE
 //Creá un objeto que represente un restaurante con nombre, tipo de cocina y calificación del 1 al 5.
 //Agregale un método que use .replace() para cambiar espacios por guiones en el nombre y pasarlo
 //a minúsculas, mostrándolo como si fuera una URL. Agregale otro método con if/else para mostrar
@@ -589,6 +542,7 @@ console.log(restaurante.mostrarCalificacion());
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+//NUMERO DIECISEIS
 //Creá un objeto que represente un paciente con nombre, temperatura y presión arterial. Agregale un
 //método que use if/else con variables internas para diagnosticar: la temperatura normal es entre 36
 //y 37.5 grados, y la presión normal es entre 60 y 120. Si algún valor está fuera del rango, mostrá
@@ -624,6 +578,7 @@ console.log(pacienteDos.temperaturaCheck())
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
+//NUMERO DIECISIETE
 //Creá un objeto que represente un cupón de descuento con código, porcentaje y si está activo.
 //Agregale un método que reciba un precio y use if/else para aplicar el descuento solo si el cupón
 //está activo y mostrar el precio final. Si no está activo, mostrar 'Cupón inválido'. Agregale otro
@@ -660,6 +615,7 @@ console.log(cuponDescuento.codigoMayus());
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+//NUMERO DIECIOCHO
 //Creá un objeto que represente un perfil de red social con nombre de usuario, cantidad de
 //seguidores y verificado (booleano). Agregale un método que use un ternario para mostrar el
 //nombre con o sin el simbolo de verificado. Agregale otro método con if/else para clasificar la
@@ -698,6 +654,7 @@ console.log(incognito.cantidadSeguidores());
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
+//NUMERO DIECINUEVE
 //Creá un objeto que represente un vuelo con origen, destino, hora de salida y si está retrasado.
 //Agregale un método que use template literals para mostrar la información del vuelo. Agregale otro
 //método que use un ternario para mostrar el estado como 'a tiempo' o 'retrasado'. Agregale un
@@ -735,6 +692,8 @@ console.log(vueloDir.zonaHoraria());
 //¿Para qué sirve la cláusula else if? sirve para evaluar multiples condiciones en orden
 
 /////////////////////////////////////////////////////////////////////////////////////////////
+
+//NUMERO VEINTE
 //Creá un objeto que represente una receta con nombre, ingredientes como string separado por
 //comas y tiempo de preparación en minutos. Agregale un método que use .split() para mostrar los
 //ingredientes uno por uno. Agregale otro método con if/else para clasificar la receta como rápida
@@ -766,6 +725,7 @@ console.log(receta.tiempoEspera())
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+//NUMERO VEINTIUNO
 //Creá un objeto que represente un gimnasio con nombre, precio mensual y si tiene pileta. 
 // Agregale un método que use un ternario para mostrar si incluye pileta en el plan. 
 // Agregale otro método que reciba la cantidad de meses y calcule el costo total mostrándolo con template literals.
@@ -794,6 +754,7 @@ console.log(gimnasio.cantidadMeses());
 
 /////////////////////////////////////////////////////////////////////////
 
+//NUMERO VEINTIDOS
 //Creá un objeto que represente un estudiante con nombre, carrera y promedio. Agregale un método
 // use .toLowerCase() para normalizar el nombre de la carrera antes de mostrarlo. Agregale otro
 //método con if/else para mostrar el estado académico: promedio menor a 4 es 'en riesgo
@@ -828,6 +789,7 @@ console.log(estudiante.promedioAcademico());
 
 //////////////////////////////////////////////////////////////////////////
 
+//NUMERO VEINTITRES
 //Creá un objeto que represente un producto de e-commerce con nombre, precio y categoría.
 //Agregale un método que use .includes() con un ternario para mostrar si pertenece a la sección de
 //ofertas: la categoría debe contener la palabra 'oferta' para que cuente. Agregale otro método que
@@ -860,6 +822,7 @@ console.log(productoTest.nameProduct());
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
+//NUMERO VEINTICUATRO
 //Creá un objeto que represente un sistema de turnos con nombre del cliente, servicio y hora. La
 //hora se guarda como número (por ejemplo, 14 para las 14:00). Agregale un método que use .trim()
 //para limpiar el nombre antes de guardarlo. Agregale otro método con if/else para verificar si la hora
@@ -887,6 +850,7 @@ console.log(turnos.verifyHour());
 
 /////////////////////////////////////////////////////////////////////////////////
 
+//NUMERO VEINTICINCO
 //Creá un objeto que represente un vehículo de delivery con patente, nombre del repartidor y
 //cantidad de entregas del día. Agregale un método que use un ternario para mostrar si puede tomar
 //más pedidos: el límite diario es 20 entregas. Agregale otro método que muestre la patente siempre
@@ -910,6 +874,7 @@ console.log(vehiculoUber.patenteMayus());
 
 ///////////////////////////////////////////////////////////////////////////////////7
 
+//NUMERO VEINTISEIS
 //Creá un objeto que represente un examen con materia, alumno, respuesta correcta y respuesta del
 //alumno. Agregale un método que use .trim() y .toLowerCase() para normalizar ambas respuestas
 //antes de compararlas. Usá if/else para mostrar 'Correcto' o 'Incorrecto' con el nombre del alumno y
@@ -939,9 +904,98 @@ const examenFinal = {
 console.log(examenFinal.mostrarRespuesta());
 console.log(examenFinal.estadoRespuesta());
 
+///////////////////////////////////////////////////////////////////////////
+
+//NUMERO VEINTISIETE
+//Creá un objeto que represente una notificación con título, mensaje y prioridad ('alta', 'media' o
+//'baja'). Agregale un método que use if/else para mostrar el título en mayúsculas si la prioridad es
+//alta, en formato normal si es media, y en minúsculas si es baja. Agregale otro método que use
+//.length con un ternario para recortar el mensaje si supera los 50 caracteres, mostrando solo los
+//primeros 50 seguidos de '...'.
+
+const notificacion = {
+    titulo: "Aviso Importante",
+    mensaje: "Mensaje de el operador de servicio, no estará disponible en las próximas horas",
+    prioridad:"alta",
+    sizeTexto(){
+        if(this.prioridad === "alta"){
+            return `La prioridad es: ${this.prioridad.toUpperCase()}`
+        }else if(this.prioridad === "media"){
+            return `La prioridad es: ${this.prioridad}`
+        }else if(this.prioridad === "baja"){
+            return `La prioridad es: ${this.prioridad.toLowerCase()}`
+        }
+        return "No es prioritario"
+    },
+    recortarmensaje(){
+        const mensajeRecorte = this.mensaje.length > 50 ? `${this.mensaje.slice(0,50) + "..."}`: this.mensaje;
+        return `Este es el mensaje recortado: ${mensajeRecorte}`
+    }
+}
+
+console.log(notificacion.sizeTexto());
+console.log(notificacion.recortarmensaje());
+
+//¿Qué hace .substring()? se utiliza para extraer una porción de un texto (string) y devolverla como una cadena nueva, 
+// sin modificar la original.
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+//NUMERO VEINTIOCHO
+//Creá un objeto que represente una farmacia con nombre, dirección y turno (booleano que indica si
+//está de turno esa noche). Agregale un método con un ternario para mostrar si está de turno.
+//Agregale otro método que use .replace() para formatear la dirección reemplazando la abreviatura
+//'Av.' por 'Avenida'
+
+const farmacia = {
+    nombre: "Farmacenter",
+    direccion: " Centro Villamaria",
+    turnoNoche: true,
+    hayTurno(){
+        return this.turnoNoche ? `La farmacia ${this.nombre} esta de turno` : "No esta de turno la farmacia";
+
+    },
+    abreviar(){
+        return `La dirección de la drogueria ${this.nombre} es: ${this.direccion.replace("Centro","Ctr")} `
+    },
+    terminaNumero(){
+        return this.direccion.endsWith() ? "La dirección finaliza en numeracion" : "La direccion no finaliza en numeracion"
+    }
 
 
+}
+console.log(farmacia.hayTurno());
+console.log(farmacia.abreviar());
+console.log(farmacia.terminaNumero());
 
+// ¿Qué hace .endsWith()? Como su nombre indica, sirve para verificar si una cadena de texto termina con los 
+// caracteres que tú le indiques.siempre devuelve booleano
+
+/////////////////////////////////////////////////////////////////////////////
+
+//NUMERO VEINTINUEVE
+//Creá un objeto que represente una cancha de fútbol con nombre, superficie y precio por hora.
+//Agregale un método que reciba la cantidad de horas y use if/else para calcular el precio: si se
+//reservan más de 3 horas se aplica un 20% de descuento, si no se cobra el precio normal. Mostrá el
+//nombre de la cancha con .toUpperCase() en todos los mensajes.
+
+const canchaFutbol = {
+    nombre: "Real Madrid",
+    superficie: "Sintetica",
+    precioHora: 15000,
+    cantidadHoras(hora){
+        const totalPrecioHora = this.precioHora * hora;
+        if(hora >= 3){
+            const descuento = totalPrecioHora * 0.20;
+            const calculoFinal = totalPrecioHora - descuento;
+            return `Felicidades, la cancha ${this.nombre.toUpperCase()} te espera!. Tienes descuento del 20%, el precio final es: ${calculoFinal}`
+        }else{
+            return `El total a pagar es: ${totalPrecioHora}`
+        }
+    }
+
+}
+console.log(canchaFutbol.cantidadHoras(2));
 
 
 
