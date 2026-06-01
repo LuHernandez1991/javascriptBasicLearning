@@ -12,9 +12,18 @@ function obtenerNombre(nombre){
         resolve(`El nombre es: ${nombre}`)
     })
 }
+
+//consumir promesa con then
 obtenerNombre("Luisa").then((resultado)=>{
     console.log(resultado)
 });
+
+//consumir promesa con async y await
+async function obtenerNombreAsync(){
+    const resultado = await obtenerNombre();
+    console.log(resultado)
+}
+obtenerNombreAsync("Nuevo nombre con async");
 
 //Ejercicio DOS
 
@@ -34,10 +43,17 @@ function esperarYSaludar(){
     })
 };
 
+//consumir promesa con then
 esperarYSaludar().then((resultado)=>{
     console.log(resultado)
 });
 
+//consumir promesa con async y await
+async function esperarYSaludarAsync(){
+    const resultado = await esperarYSaludar();
+    console.log(resultado)
+}
+esperarYSaludarAsync();
 //Ejercicio TRES
 
 /*
@@ -63,6 +79,17 @@ verificarStock(0).then((resultado)=>{
         console.log("Ha ocurrido un error", error)
 });
 
+//consmuir promesa con async y await
+async function verificarStockAsync(params){
+    try{
+    const resultado = await verificarStock(params);
+    console.log(resultado)
+    }catch(error){
+        console.log("Desde el catch", error)
+    }
+}
+
+verificarStockAsync(2);
 //Ejercicio CUATRO
 
 /*
@@ -88,6 +115,18 @@ verificarStock(0).then((resultado)=>{
 }).finally(()=>{
     console.log("Consulta de stock finalizada")
 });
+
+//consumir promesa con async
+async function verificarStockAsyncDos(params){
+    try{
+    const resultado = await verificarStock(params);
+    console.log(resultado)
+    }catch(error){
+        console.log("Desde el catch", error)
+    }
+}
+
+verificarStockAsyncDos(2);
 
 //Ejercicio CINCO
 
